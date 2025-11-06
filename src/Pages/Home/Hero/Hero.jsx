@@ -29,12 +29,16 @@ const Hero = () => {
           />
         </div>
         <p className="text-[14px] sm:text-[15px] md:text-[16px] mt-[10px] mb-[25px] max-w-xl mx-auto lg:mx-0">
-          Fresher skilled in React, Node.js, Express.js, MongoDB, and Firebase, focused on building responsive web applications. Open to remote or on-site opportunities to apply skills and gain teamwork experience.
+          Fresher skilled in React, Node.js, Express.js, MongoDB, and Firebase,
+          focused on building responsive web applications. Open to remote or
+          on-site opportunities to apply skills and gain teamwork experience.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 md:justify-center lg:justify-start">
-          <button className="py-[10px] cursor-pointer px-[25px] sm:px-[30px] bg-[var(--primary-color)] rounded-[40px] border-2 border-[var(--primary-color)] shadow-[0_0_10px_#7cf03d] text-[14px] sm:text-[16px] font-semibold hover:bg-transparent hover:shadow-none text-black hover:text-[var(--primary-color)] transition-all duration-500 ease-in-out">
-            Download Resume
-          </button>
+          <a href="/Resume (9).pdf" target="_blank" rel="noopener noreferrer">
+            <button className="py-[10px] cursor-pointer px-[25px] sm:px-[30px] bg-[var(--primary-color)] rounded-[40px] border-2 border-[var(--primary-color)] shadow-[0_0_10px_#7cf03d] text-[14px] sm:text-[16px] font-semibold hover:bg-transparent hover:shadow-none text-black hover:text-[var(--primary-color)] transition-all duration-500 ease-in-out">
+              Download Resume
+            </button>
+          </a>
           <div className="flex gap-2 ">
             {[
               {
