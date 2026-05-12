@@ -17,19 +17,20 @@ import { FiGlobe } from "react-icons/fi";
 const ProjectDetails = () => {
   const { id } = useParams();
   const [scroll, setScroll] = useState(false);
-    // scroll handler
-    useEffect(() => {
-       window.scrollTo(0, 0);
-      const handleScroll = () => {
-        if (window.scrollY > 50) { // 50px scroll হলে shadow show
-          setScroll(true);
-        } else {
-          setScroll(false);
-        }
-      };
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        // 50px scroll হলে shadow show
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const project = [
     {
       id: 1,
@@ -147,8 +148,10 @@ const ProjectDetails = () => {
   ];
   const detailsData = project.find((data) => data.id === parseInt(id));
   return (
-    <div className=" lg:pb-20 pb-12 mb:pb-16">
-      <div className={`h-18 fixed top-0 left-0 w-full z-50  border-b border-gray-600 ${scroll ? "shadow-md bg-gray-800":""}`}>
+    <div className=" lg:pb-20 pb-12 mb:pb-16 bg-[#080A0C]">
+      <div
+        className={`h-18 fixed top-0 left-0 w-full z-50  border-b border-gray-600 bg-[#080A0C] ${scroll ? "shadow-md " : ""}`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-full">
           <Link to="/">
             <button className="flex items-center gap-2 px-3 py-2 text-[16px] bg-gray-800 font-medium border-gray-600 border-2 text-gray-200 hover:bg-gray-700 hover:text-white rounded-md ">
@@ -160,7 +163,7 @@ const ProjectDetails = () => {
           </Link>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-19">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-19 ">
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -192,11 +195,11 @@ const ProjectDetails = () => {
           </Swiper>
         </motion.section>
       </div>
-      {/*content info */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:mt-15 mt-5 md:mt-0 lg:flex gap-15 ">
         <div className="lg:w-[70%] ">
           <h2 className="text-[24px] font-semibold text-white flex items-center gap-4">
-            <FaFileAlt className="text-[#7cf03d]" />
+            <FaFileAlt className="text-[#00d4b4]" />
             Project Overview
           </h2>
 
@@ -205,7 +208,7 @@ const ProjectDetails = () => {
           </p>
           <div className="lg:mt-15 mt-5 md:mt-8">
             <h2 className="text-[24px] font-semibold text-white flex items-center gap-4">
-              <FaExclamationTriangle className="text-[#7cf03d]" />
+              <FaExclamationTriangle className="text-[#00d4b4]" />
               Challenges Faced
             </h2>
             {detailsData.Challenges.map((cha, index) => (
@@ -220,7 +223,7 @@ const ProjectDetails = () => {
           </div>
           <div className="lg:mt-15 mt-5 md:mt-8">
             <h2 className="text-[24px] font-semibold text-white flex items-center gap-4">
-              <TrendingUp className="text-[#7cf03d]" />
+              <TrendingUp className="text-[#00d4b4]" />
               Future Improvements
             </h2>
             {detailsData.Challenges.map((cha, index) => (
@@ -228,16 +231,16 @@ const ProjectDetails = () => {
                 className="flex items-center text-gray-200 text-[15px] md:text-[16px] gap-x-5 mt-5"
                 key={index}
               >
-                <div className="h-[12px] w-[12px] rounded-full bg-[#7cf03d] flex-shrink-0"></div>
+                <div className="h-[12px] w-[12px] rounded-full text-[#00d4b4] flex-shrink-0"></div>
                 {cha}
               </div>
             ))}
           </div>
         </div>
-        {/*right */}
+
         <div className="lg:w-[30%] lg:mt-0 mt-5 md:mt-8">
           <h2 className="text-[24px] font-semibold text-white flex items-center gap-4 ">
-            <FaTools className="text-[#7cf03d]" />
+            <FaTools className="text-[#00d4b4]" />
             Technology Stack
           </h2>
           <div className="mt-5 flex flex-col gap-y-3">
@@ -252,23 +255,23 @@ const ProjectDetails = () => {
           </div>
           <div className="mt-15">
             <h2 className="text-[24px] font-semibold text-white flex items-center gap-4">
-              <FiGlobe className="text-[#7cf03d]" />
+              <FiGlobe className="text-[#00d4b4]" />
               Project Links
             </h2>
             <div className="flex flex-col gap-y-3">
               <a href={detailsData.liveLink} target="_blank">
-              <button className="py-[8px] opacity-90 mt-6 w-full bg-[var(--primary-color)] rounded-md border-2 border-[var(--primary-color)] shadow-[0_0_10px_#7cf03d] text-[16px] font-semibold hover:bg-transparent hover:shadow-none text-black hover:text-[var(--primary-color)]  transition-all duration-500 ease-in-out">
-                Live Demo
-              </button>
-            </a>
-            <a className="" href={detailsData.code} target="_blank">
-              <button className="flex items-center gap-2 w-full justify-center py-2 text-[16px] bg-gray-800 font-medium border-gray-600 border-2 text-gray-200 hover:bg-gray-700 hover:text-white rounded-md ">
-                <span className="">
-                  <GoArrowLeft />
-                </span>{" "}
-                Source Code
-              </button>
-            </a>
+                <button className="py-[8px] opacity-90 mt-6 w-full bg-[var(--primary-color)] rounded-md border-2 border-[var(--primary-color)] shadow-[0_0_10px_#7cf03d] text-[16px] font-semibold hover:bg-transparent hover:shadow-none text-black hover:text-[var(--primary-color)]  transition-all duration-500 ease-in-out">
+                  Live Demo
+                </button>
+              </a>
+              <a className="" href={detailsData.code} target="_blank">
+                <button className="flex items-center gap-2 w-full justify-center py-2 text-[16px] bg-gray-800 font-medium border-gray-600 border-2 text-gray-200 hover:bg-gray-700 hover:text-white rounded-md ">
+                  <span className="">
+                    <GoArrowLeft />
+                  </span>{" "}
+                  Source Code
+                </button>
+              </a>
             </div>
           </div>
         </div>
