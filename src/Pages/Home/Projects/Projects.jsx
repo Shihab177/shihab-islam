@@ -56,22 +56,19 @@ const Projects = () => {
         "Firebase Auth",
         "Framer Motion",
         "JWT",
-         "TailwindCss",
+        "TailwindCss",
       ],
       Challenges: [
         "Book Data Structure & Status Management",
         "Implementing secure JWT-based authentication to ensure private route protection without losing login state on reload.",
         "Designing an intuitive UI/UX for item posting, editing, and recovery workflows while keeping forms pre-filled with logged-in user data.",
-         "Integrating search and filtering functionality for large datasets without degrading performance.",
-        
-       
+        "Integrating search and filtering functionality for large datasets without degrading performance.",
       ],
       Improvements: [
         "Users will be able to follow each other and view the books they are reading.",
         "Users will receive notifications when a “Want to Read” book is released or a new edition becomes available.",
         "User’s read books, category distribution, and progress over time chart (using Recharts or Chart.js).",
         "JWT Auth + Role Based Access",
-        
       ],
       liveLink: "https://boibaksho-e735b.web.app/Bookshelf",
       code: "https://github.com/Shihab177/BoiBaksho?tab=readme-ov-file",
@@ -90,14 +87,14 @@ const Projects = () => {
       overview:
         "RoomSync is a roommate finder web application that helps users connect with potential roommates.Users can create listings with their lifestyle preferences, rent budget, and contact details.It also allows browsing and filtering through all listings, liking posts, and managing personal listings.",
       technology: [
-       "React",
+        "React",
         "Node.js",
         "MongoDB",
         "Express",
         "Firebase Auth",
         "Framer Motion",
         "JWT",
-         "TailwindCss",
+        "TailwindCss",
       ],
       Challenges: [
         "Back-end requests are secured using JWT (JSON Web Tokens). This involves generating, verifying, and handling token expiration.",
@@ -135,16 +132,23 @@ const Projects = () => {
       </p>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-between  md:gap-x-5 gap-y-5 ">
         {project.map((item) => (
-          <div className="rounded-md bg-[#111826] shadow-2xl border-gray-700 border-2" key={item.id}>
+          <div
+            className="rounded-md group cursor-pointer  bg-[#111826] shadow-2xl border-gray-700 border-2"
+            key={item.id}
+          >
             <div className="w-full h-[278px] p-[2px]">
-                  <img className="rounded-t-md opacity-90 w-full h-full" src={item.image} alt="" />
+              <img
+                className="rounded-t-md opacity-90 w-full h-full"
+                src={item.image}
+                alt=""
+              />
             </div>
-           
+
             <div className="p-5">
-              <h2 className="text-white text-[21px] mt-2 font-medium">
+              <h2 className="text-white text-[21px] group-hover:text-[#00d4b4] mt-2 font-medium">
                 {item.name}
               </h2>
-              <p className="text-[15px] my-3">
+              <p className="text-[15px] my-3 text-white/55">
                 {(() => {
                   const w = (item.overview || "").trim().split(/\s+/);
                   const t = w.slice(0, 11).join(" ");
@@ -168,19 +172,24 @@ const Projects = () => {
                 )}
               </div>
               <Link to={`details/${item.id}`}>
-              <button className="py-[8px] opacity-90 mt-6 w-full bg-[var(--primary-color)] rounded-md border-2 border-[var(--primary-color)] shadow-[0_0_10px_#7cf03d] text-[16px] font-semibold hover:bg-transparent hover:shadow-none text-black hover:text-[var(--primary-color)]  transition-all duration-500 ease-in-out">
-                View Details
-              </button>
+                <button className="py-[8px] opacity-90 mt-6 w-full bg-[var(--primary-color)] rounded-md border-2 border-[var(--primary-color)] shadow-[0_0_10px_#7cf03d] text-[16px] font-semibold hover:bg-transparent hover:shadow-none text-black hover:text-[var(--primary-color)]  transition-all duration-500 ease-in-out">
+                  View Details
+                </button>
               </Link>
             </div>
           </div>
         ))}
       </div>
-     <div className="w-full flex justify-center lg:mt-14 md:mt-8 mt-6">
+      <div className="w-full flex justify-center lg:mt-14 md:mt-8 mt-6">
         <a href="https://github.com/Shihab177" target="_blank">
-             <button className="flex items-center gap-2 lg:px-6 px-4 py-3 lg:py-4 lg:text-[20px] text-[16px] md:text-[18px] bg-gray-800 font-medium border-gray-600 border-2 text-gray-200 hover:bg-gray-700 hover:text-white rounded-md ">View All Projects <span className=""><FaLongArrowAltRight /></span></button>
+          <button className="flex items-center gap-2 lg:px-6 px-4 py-3 lg:py-4 lg:text-[20px] text-[16px] md:text-[18px] bg-gray-800 font-medium border-gray-600 border-2 text-gray-200 hover:bg-gray-700 hover:text-white rounded-md ">
+            View All Projects{" "}
+            <span className="">
+              <FaLongArrowAltRight />
+            </span>
+          </button>
         </a>
-     </div>
+      </div>
     </div>
   );
 };
