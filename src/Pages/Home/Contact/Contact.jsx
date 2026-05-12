@@ -10,9 +10,15 @@ import {
 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { FaFacebookF } from "react-icons/fa";
 const Contact = () => {
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   const contactInfo = [
     {
       icon: Mail,
@@ -48,15 +54,21 @@ const Contact = () => {
       color: "hover:text-blue-600",
     },
     {
+      icon: FaFacebookF,
+      label: "Facebook",
+      href: "https://www.facebook.com/sk.shihab.73594",
+      color: "hover:text-blue-600",
+    },
+    {
       icon: Mail,
       label: "Email",
       href: "https://mail.google.com/mail/?view=cm&fs=1&to=shihab.islam.dev@gmail.com",
       color: "hover:text-red-500",
     },
   ];
-  const onSubmit = async(data) => {
-  console.log("Form data:", data);
-   setIsSubmitting(true);
+  const onSubmit = async (data) => {
+    console.log("Form data:", data);
+    setIsSubmitting(true);
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
       toast.success("Message sent successfully! I'll get back to you soon.");
@@ -66,9 +78,12 @@ const Contact = () => {
     } finally {
       setIsSubmitting(false);
     }
-};
+  };
   return (
-    <div id="contact" className=" pt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pb-12 md:pb-8 pb-4">
+    <div
+      id="contact"
+      className=" pt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pb-12 md:pb-8 pb-4"
+    >
       <h1 className="lg:text-[30px] md:text-[30px] text-[24px] text-center text-white font-semibold">
         Get In <span className="text-[var(--primary-color)]"> Touch</span>
       </h1>
@@ -96,20 +111,21 @@ const Contact = () => {
                   href={item.href}
                   className="flex items-center gap-4 px-4 py-6 rounded-lg hover:bg-gray-900 transition-colors group"
                   target="_blank"
-                  
                 >
                   <div className="p-4 border-2 border-[var(--primary-color)] rounded-full text-[var(--primary-color)] text-[20px] hover:bg-[var(--primary-color)] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7cf03d] transition-all duration-500 ease-in-out">
                     <Icon className="md:h-6 md:w-6 h-4 w-4" />
                   </div>
                   <div className="text-gray-200">
                     <p className="text-sm">{item.label}</p>
-                    <p className="md:text-lg text-[15px] font-medium">{item.value}</p>
+                    <p className="md:text-lg text-[15px] font-medium">
+                      {item.value}
+                    </p>
                   </div>
                 </a>
               );
             })}
           </div>
-          {/* Social Links */}
+
           <div className="lg:mt-8 md:mt-6 mt-4">
             <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
             <div className="flex gap-4">
@@ -122,7 +138,6 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`p-4 border-2 border-[var(--primary-color)] rounded-full text-[var(--primary-color)] text-[20px] hover:bg-[var(--primary-color)] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7cf03d] transition-all duration-500 ease-in-out`}
-                    
                   >
                     <Icon className="md:h-5 md:w-5 h-4 w-4" />
                     <span className="sr-only">{social.label}</span>
@@ -132,10 +147,8 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        {/*right*/}
-        <div className="lg:w-1/2">
-          {/* Contact Form */}
 
+        <div className="lg:w-1/2">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="space-y-6 bg-[#111826] p-8 shadow-md rounded-md border-2 border-gray-700 text-white"
@@ -168,8 +181,7 @@ const Contact = () => {
                       message: "Invalid email address",
                     },
                   })}
-                   className={`py-2 px-4 bg-black w-full shadow-md rounded-md placeholder:text-gray-200 ${errors.email ? "border-red-500" : ""}`}
-                  
+                  className={`py-2 px-4 bg-black w-full shadow-md rounded-md placeholder:text-gray-200 ${errors.email ? "border-red-500" : ""}`}
                   placeholder="your@email.com"
                 />
                 {errors.email && (
@@ -185,7 +197,7 @@ const Contact = () => {
                 {...register("subject", {
                   required: "Subject is required",
                 })}
-                  className={`py-2 px-4 bg-black shadow-md rounded-md placeholder:text-gray-200 ${errors.subject ? "border-red-500" : ""}`}
+                className={`py-2 px-4 bg-black shadow-md rounded-md placeholder:text-gray-200 ${errors.subject ? "border-red-500" : ""}`}
                 placeholder="What's this about?"
               />
               {errors.subject && (
@@ -205,8 +217,7 @@ const Contact = () => {
                     message: "Message must be at least 10 characters",
                   },
                 })}
-            
-                 className={`py-2 px-4 bg-black shadow-md rounded-md placeholder:text-gray-200 ${errors.message ? "border-red-500" : ""}`}
+                className={`py-2 px-4 bg-black shadow-md rounded-md placeholder:text-gray-200 ${errors.message ? "border-red-500" : ""}`}
                 placeholder="Tell me about your project..."
               />
               {errors.message && (
@@ -231,10 +242,10 @@ const Contact = () => {
                   className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
                 />
               ) : (
-                  <>
-                    <Send className="h-4 w-4 mr-2" />
-                    Send Message
-                  </>
+                <>
+                  <Send className="h-4 w-4 mr-2" />
+                  Send Message
+                </>
               )}
             </button>
           </form>
