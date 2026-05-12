@@ -105,12 +105,12 @@ const Skills = () => {
   ];
 
   const AlwaysLearning = [
-    "Redux", // State management
-    "TypeScript", // Strongly typed JS
-    "Mongoose", // MongoDB ODM
-    "DevOps", // CI/CD, deployment practices
-    "GraphQL", // API query language
-    "Docker", // Containerization
+    "Mobile Apps (React Native)",
+    "Microservices",
+    "System Design & Architecture",
+    "DevOps",
+
+    "Docker",
     "Testing (Jest/RTL)",
   ];
 
@@ -148,40 +148,40 @@ const Skills = () => {
           </button>
         ))}
       </div>
-      {/* Items List */}
-     <div className="lg:mt-12 md:mt-8 mt-6 grid grid-cols-2 md:grid-cols-3  lg:grid-cols-6 lg:gap-8 md:gap-6 gap-4 items-center w-full">
-  {activeCategory?.frontend.map((skill, index) => (
-    <div
-      key={index}
-      className="bg-gray-800 xl:py-8 lg:py-6 md:py-10 py-4 rounded-md shadow hover:bg-gray-700 border border-gray-700 flex flex-col gap-4 items-center"
-    >
-      <img
-        className="h-15 w-15 rounded-md animate-slow-bounce"
-        src={skill.image}
-        alt={skill.name}
-      />
-      <p className="font-medium text-[16px]">{skill.name}</p>
-    </div>
-  ))}
-</div>
+
+      <div className="lg:mt-12 md:mt-8 mt-6 grid grid-cols-2 md:grid-cols-3  lg:grid-cols-6 lg:gap-8 md:gap-6 gap-4 items-center w-full">
+        {activeCategory?.frontend.map((skill, index) => (
+          <div
+            key={index}
+            className="bg-gray-800 xl:py-8 lg:py-6 md:py-10 py-4 rounded-md shadow hover:bg-gray-700 border border-gray-700 flex flex-col gap-4 items-center"
+          >
+            <img
+              className="h-15 w-15 rounded-md animate-slow-bounce"
+              src={skill.image}
+              alt={skill.name}
+            />
+            <p className="font-medium text-[16px]">{skill.name}</p>
+          </div>
+        ))}
+      </div>
 
       <div className="lg:mt-14 md:mt-8 mt-6 w-full">
-        <h1 className="text-[24px] font-medium text-center mb-4 md:mb-6 lg:mb-7">Always <span className="text-[var(--primary-color)]">Learning</span></h1>
+        <h1 className="text-[24px] font-medium text-center mb-4 md:mb-6 lg:mb-7">
+          Always <span className="text-[var(--primary-color)]">Learning</span>
+        </h1>
         <div className=" flex justify-center gap-4 flex-wrap">
-        {AlwaysLearning.map(
-          (item, colIndex) =>
-            item && (
-              <p
-                key={colIndex}
-                className="bg-[#1B2949]  py-2 px-4  rounded-4xl hover:shadow-lg transition-shadow duration-300 shadow-xl text-blue-200 border border-gray-700 font-medium text-[14px]"
-              >
-                
+          {AlwaysLearning.map(
+            (item, colIndex) =>
+              item && (
+                <p
+                  key={colIndex}
+                  className="bg-[#1B2949]  py-2 px-4  rounded-4xl hover:shadow-lg transition-shadow duration-300 shadow-xl text-blue-200 border border-gray-700 font-medium text-[14px]"
+                >
                   {item}
-                
-              </p>
-            )
-        )}
-      </div>
+                </p>
+              ),
+          )}
+        </div>
       </div>
     </div>
   );
