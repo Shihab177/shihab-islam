@@ -1,89 +1,106 @@
-import React from "react";
-import { FaFacebookF, FaGithub, FaLinkedinIn, FaYoutube } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { TypeAnimation } from "react-type-animation";
-
 const Hero = () => {
   return (
     <div
       id="hero"
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen text-white flex justify-center flex-col-reverse  lg:flex-row lg:items-center lg:justify-between gap-5 md:gap-8"
+      className="relative min-h-screen flex items-center justify-center  bg-[#060d0d] "
     >
-      {/*hero-info*/}
-      <div className="w-full lg:w-[60%] text-center lg:text-left ">
-        <h1 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[55px] font-bold">
-          Hi, It’s Shihab
-        </h1>
-        <div className="text-[15px] sm:text-[22px] md:text-[23px] xl:text-[30px] mt-[-5px] font-semibold inline-block">
-          <span className="text-white">I'm a</span>{" "}
-          <TypeAnimation
-            sequence={[
-              " MERN Stack Developer",
-              1000,
-              " Mobile App Developer (React Native)",
-              1000,
-            ]}
-            speed={50}
-            style={{ color: "#7cf03d" }}
-            repeat={Infinity}
-          />
+      <div
+        className={` w-full px-6 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center gap-8 transition-all 
+         
+        }`}
+      >
+        {/* Available badge */}
+        <div className="inline-flex items-center gap-2 bg-white/[0.04] border border-white/10 rounded-full px-4 py-1.5 text-[13px] text-white/70">
+          <span className="w-[7px]  animate-pulse h-[7px] rounded-full bg-[#00d4b4] shadow-[0_0_6px_#00d4b4] inline-block" />
+          Available for new projects
         </div>
-        <p className="text-[14px] sm:text-[15px] md:text-[16px] mt-[10px] mb-[25px] max-w-xl mx-auto lg:mx-0">
-          Fresher skilled in React, Node.js, Express.js, MongoDB, and Firebase,
-          focused on building responsive web applications. Open to remote or
-          on-site opportunities to apply skills and gain teamwork experience.
+
+        {/* Heading */}
+        <div>
+          <h1 className="text-[clamp(2.5rem,7vw,5rem)] font-bold text-white leading-tight tracking-tight">
+            Hi, I'm{" "}
+            <span className="text-[#28B79C] [text-shadow:0_0_40px_rgba(0,212,180,0.3)]">
+              Shihab
+            </span>
+          </h1>
+          <h2 className="text-[clamp(2rem,6vw,4.2rem)] font-bold text-white/50 leading-tight tracking-tight">
+            I Build Digital Experiences
+          </h2>
+        </div>
+
+        {/* Subtext */}
+        <p className="text-[clamp(1.01rem,1.5vw,1.09rem)] text-white/55 max-w-[630px] leading-relaxed">
+          Crafting secure, scalable and SEO-optimized digital products with
+          clean design, modern technologies and production-ready architecture.
         </p>
-        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 md:justify-center lg:justify-start">
+
+        <div className="flex flex-wrap gap-3 justify-center">
+          <button
+            onClick={() => {
+              document.getElementById("projects")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+            className="bg-[#00d4b4] text-[#0a1a1a] font-semibold text-sm px-7 py-3 rounded-lg hover:opacity-85 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+          >
+            View Projects
+          </button>
+
+          <button
+            onClick={() => {
+              document.getElementById("contact")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+            className="bg-transparent text-white font-medium text-sm px-7 py-3 rounded-lg border border-white/25 hover:border-white/50 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+          >
+            Hire Me
+          </button>
+
           <a href="/Resume (9).pdf" target="_blank" rel="noopener noreferrer">
-            <button className="py-[10px] cursor-pointer px-[25px] sm:px-[30px] bg-[var(--primary-color)] rounded-[40px] border-2 border-[var(--primary-color)] shadow-[0_0_10px_#7cf03d] text-[14px] sm:text-[16px] font-semibold hover:bg-transparent hover:shadow-none text-black hover:text-[var(--primary-color)] transition-all duration-500 ease-in-out">
-              Download Resume
+            <button className="bg-white/5 backdrop-blur-md text-white font-medium text-sm px-7 py-3 rounded-lg border border-white/10 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+              Download CV
             </button>
           </a>
-          <div className="flex gap-2 ">
-            {[
-              {
-                icon: <FaGithub />,
-                link: "https://github.com/Shihab177",
-              },
-              {
-                icon: <FaLinkedinIn />,
-                link: "https://www.linkedin.com/in/shihab-islam77/",
-              },
-              {
-                icon: <FaFacebookF />,
-                link: "https://www.facebook.com/sk.shihab.73594",
-              },
-              {
-                icon: <FaYoutube />,
-                link: "http://www.youtube.com/@ultracoder-j3i",
-              },
-              {
-                icon: <FaXTwitter />,
-                link: "",
-              },
-            ].map((item, index) => (
-              <a
-                key={index}
-                className="p-2 border-2 border-[var(--primary-color)] rounded-full text-[var(--primary-color)] text-[18px] sm:text-[20px] hover:bg-[var(--primary-color)] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7cf03d] transition-all duration-500 ease-in-out"
-                href={item.link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {item.icon}
-              </a>
-            ))}
-          </div>
         </div>
-      </div>
 
-      {/*hero-img*/}
-      <div className="flex justify-center lg:justify-end w-full lg:w-[40%] pt-22 md:mt-0">
-        <div className=" bg-[var(--primary-color)] rounded-full relative w-[250px] sm:w-[300px] md:w-[380px] lg:w-[500px] aspect-square flex justify-center overflow-hidden shadow-[0_0_25px_#7cf03d] transition-all duration-500 ease-in-out">
-          <img
-            className="w-[200px] sm:w-[250px] md:w-[320px] lg:w-[400px] hover:shadow-[0_0_25px_#7cf03d,0_0_50px_#7cf03d,0_0_100px_#7cf03d]"
-            src="https://i.ibb.co.com/vvc1MkpS/shihab-removebg-preview.png"
-            alt="Shihab"
-          />
+        <div className="flex flex-wrap gap-3 justify-center mt-2">
+          <div className="flex items-center gap-3 bg-white/[0.04] border border-white/[0.08] rounded-xl md:px-5 px-3 py-2.5">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#00d4b4"
+              strokeWidth="2"
+            >
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+            <div className="text-left">
+              <div className="text-white text-sm font-semibold">Frontend</div>
+              <div className="text-white/40 text-xs">React &amp; Next.js</div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 bg-white/[0.04] border border-white/[0.08] rounded-xl md:px-5 px-3 py-2.5">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#00d4b4"
+              strokeWidth="2"
+            >
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 01-8 0" />
+            </svg>
+            <div className="text-left">
+              <div className="text-white text-sm font-semibold">Backend</div>
+              <div className="text-white/40 text-xs"> Express MongoDB</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
