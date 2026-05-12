@@ -5,14 +5,18 @@
 }
 
 :root {
-  --primary-color: #7cf03d;
+  --primary-color: #00d4b4;
   --btn-text-color: #ffffff;
 }
 
-.active-section{
-  color: #7cf03d;
+.active-desktop{
+  color: #00d4b4;
   font-weight: 600;
-  border-bottom: 2px solid #7cf03d;
+  border-bottom: 2px solid #00d4b4;
+}
+.active-mobile{
+  color: #00d4b4;
+  font-weight: 600;
 }
 
 @keyframes slow-bounce {
