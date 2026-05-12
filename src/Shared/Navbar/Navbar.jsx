@@ -16,12 +16,10 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [offset, setOffset] = useState(-80);
 
-  // scroll handler
   useEffect(() => {
-     scrollSpy.update(); 
+    scrollSpy.update();
     const handleScroll = () => {
       if (window.scrollY > 1) {
-        // 50px scroll হলে shadow show
         setScroll(true);
       } else {
         setScroll(false);
@@ -33,13 +31,13 @@ const Navbar = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setOffset(-56); // Mobile navbar height
+        setOffset(-70);
       } else {
-        setOffset(-80); // Desktop navbar height
+        setOffset(-80);
       }
     };
 
-    handleResize(); // প্রথমবার রান করবে
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -55,21 +53,20 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Navbar */}
       <nav
-        className={`md:h-20 h-[56px] fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scroll ? "shadow-md bg-gray-800" : ""
+        className={`md:h-20 h-[70px] fixed top-0 left-0 w-full z-50 backdrop-blur-md transition-all duration-300 bg-[#080A0C] ${
+          scroll ? "shadow-md " : ""
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center text-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 h-full flex justify-between items-center text-white">
           <div className="">
-            <h1 className="md:text-[30px] text-[20px] font-semibold">
-              Shihab <span className="text-[#7cf03d]">Islam</span>
+            <h1 className="text-[30px]  font-semibold text-[#28B79C] ">
+              Shihab.
             </h1>
           </div>
 
           {/* Desktop Links */}
-          <div className="hidden lg:flex gap-6 xl:gap-8 font-medium">
+          <div className="hidden lg:flex gap-6 xl:gap-8 font-medium ">
             {links.map((link) => (
               <Link
                 key={link.to}
@@ -78,17 +75,15 @@ const Navbar = () => {
                 duration={500}
                 spy={true}
                 offset={offset}
-                activeClass="active-section"
-               
-                className="cursor-pointer hover:text-[#7cf03d] 
-                 text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] xl:text-[20px]"
+                activeClass="active-desktop"
+                className="cursor-pointer text-gray-400 hover:text-[#00d4b4]
+                 text-sm"
               >
                 {link.name}
               </Link>
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="lg:hidden">
             <HiMenuAlt1
               size={27}
@@ -132,8 +127,9 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 spy={true}
-               offset={offset}
-                className="flex items-center gap-3 hover:text-[#7cf03d] cursor-pointer"
+                offset={offset}
+                activeClass="active-mobile"
+                className="flex text-sm items-center gap-3 text-gray-400 hover:text-[#00d4b4] cursor-pointer "
                 onClick={() => setMenuOpen(false)}
               >
                 {link.icon}
