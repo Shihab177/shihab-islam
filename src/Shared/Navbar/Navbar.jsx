@@ -54,9 +54,10 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`md:h-20 h-[70px] fixed top-0 left-0 w-full z-50 backdrop-blur-md transition-all duration-300 bg-[#080A0C] ${
-          scroll ? "shadow-md " : ""
-        }`}
+        className={`md:h-20 h-[70px] fixed top-0 left-0 w-full z-50
+  backdrop-blur-xl bg-[#080A0C]/60 border-b border-white/10 ${
+    scroll ? "" : ""
+  }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 h-full flex justify-between items-center text-white">
           <div className="">

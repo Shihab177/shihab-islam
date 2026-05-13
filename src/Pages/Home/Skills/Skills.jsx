@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router";
-
+import tailwindImage from "../../../assets/images/tailwind.png";
+import javascriptImage from "../../../assets/images/javascript.png";
+import reactImage from "../../../assets/images/react.png";
+import nextjsImage from "../../../assets/images/nextjs.png";
+import typescriptImage from "../../../assets/images/typescript.png";
+import zustandImage from "../../../assets/images/justand.png";
+import nodejsImage from "../../../assets/images/nodejs.png";
+import expressImage from "../../../assets/images/express.png";
+import restApiImage from "../../../assets/images/restapi.png";
+import jwtImage from "../../../assets/images/jwt.png";
+import mongodbImage from "../../../assets/images/mongodb.png";
+import postgresImage from "../../../assets/images/postgres.png";
+import dockerImage from "../../../assets/images/docker.png";
 const Skills = () => {
   const [category, setCategory] = useState("Frontend");
   const skills = [
@@ -9,29 +21,28 @@ const Skills = () => {
       category: "Frontend",
       frontend: [
         {
-          name: "HTML",
-          image: "https://i.ibb.co.com/BVGpZvMm/html-5-174854.png",
-        },
-        {
-          name: "Css",
-          image: "https://i.ibb.co.com/gbgJ7s5y/css-3-732190.png",
-        },
-        {
           name: "Tailwind CSS",
-          image:
-            "https://i.ibb.co.com/VpMh8nRk/tailwind-css-logo-png-seeklogo-354675.png",
+          image: tailwindImage,
         },
         {
           name: "JavaScript",
-          image: "https://i.ibb.co.com/m5hYyDp0/js-5968292.png",
+          image: javascriptImage,
         },
         {
           name: "React",
-          image: "https://i.ibb.co.com/ZphkhHxQ/physics-753244.png",
+          image: reactImage,
         },
         {
           name: "Next.js",
-          image: "https://i.ibb.co.com/twMmbtQM/nextjs2106-logowik-com.webp",
+          image: nextjsImage,
+        },
+        {
+          name: "TypeScript",
+          image: typescriptImage,
+        },
+        {
+          name: "Zustand",
+          image: zustandImage,
         },
       ],
     },
@@ -41,31 +52,28 @@ const Skills = () => {
       frontend: [
         {
           name: "Node.js",
-          image:
-            "https://i.ibb.co.com/j9pfk3rC/40a750173673c890d7e081387b76469d.jpg",
+          image: nodejsImage,
         },
         {
           name: "Express.js",
-          image: "https://i.ibb.co.com/GQcYSDtv/images-4.png",
+          image: expressImage,
         },
+
         {
-          name: "MongoDB",
-          image:
-            "https://i.ibb.co.com/60GM79dQ/b2317e8174e5fcef57c74c662f57d155.jpg",
-        },
-        {
-          name: "Firebase",
-          image:
-            "https://i.ibb.co.com/pvMYWBG3/wagtailvideo-gfeqmswx-thumb.jpg",
+          name: "Rest Api",
+          image: restApiImage,
         },
         {
           name: "Jwt",
-          image:
-            "https://i.ibb.co.com/dwYbjWff/jwt-json-web-tokens9313-logowik-com.webp",
+          image: jwtImage,
         },
         {
-          name: "Stripe",
-          image: "https://i.ibb.co.com/sdQ37qm3/1685814539stripe-icon-png.png",
+          name: "MongoDB",
+          image: mongodbImage,
+        },
+        {
+          name: "PostgresSQL",
+          image: postgresImage,
         },
       ],
     },
@@ -74,31 +82,34 @@ const Skills = () => {
       category: "Tools",
       frontend: [
         {
-          name: "VS Code",
-          image: "https://i.ibb.co.com/Ld25RzD9/images-10.jpg",
-        },
-        {
-          name: "Android Studio",
-          image:
-            "https://i.ibb.co.com/39q0wRg5/st-small-507x507-pad-600x600-f8f8f8.jpg",
-        },
-        {
           name: "Git & GitHub",
           image:
             "https://i.ibb.co.com/cXJq9hnJ/074d0b06-a5e3-11e2-8b7f-9f09eb2ddfae.webp",
         },
         {
-          name: "Figma",
-          image:
-            "https://i.postimg.cc/bw4RcCxJ/5094051dac77593d0f0978bdcbabaf79e5bb855c-1080x1080.avif",
-        },
-        {
           name: "Postman",
           image: "https://i.postimg.cc/fTnxC0HR/postman-icon-filled-256.webp",
         },
+
+        {
+          name: "Docker",
+          image:
+            dockerImage,
+        },
+
+        {
+          name: "Pnpm",
+          image:
+            "https://i.postimg.cc/bw4RcCxJ/5094051dac77593d0f0978bdcbabaf79e5bb855c-1080x1080.avif",
+        },
+
         {
           name: "Vercel",
           image: "https://i.postimg.cc/fLHmL6d8/images-5.png",
+        },
+        {
+          name: "VS Code",
+          image: "https://i.ibb.co.com/Ld25RzD9/images-10.jpg",
         },
       ],
     },
