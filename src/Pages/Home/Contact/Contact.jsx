@@ -70,7 +70,7 @@ const Contact = () => {
   setIsSubmitting(true);
 
   try {
-    const res = await fetch("https://your-server-url/send-message", {
+    const res = await fetch("https://roommate-finder-web-server.vercel.app/send-message", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
