@@ -66,30 +66,38 @@ const Contact = () => {
       color: "hover:text-red-500",
     },
   ];
- const onSubmit = async (data) => {
-  setIsSubmitting(true);
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+   console.log(data)
+    try {
+      const res = await fetch(
+        "https://roommate-finder-web-server.vercel.app/send-message",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        },
+      );
 
-  try {
-    const res = await fetch("https://roommate-finder-web-server.vercel.app/send-message", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+      const result = await res.json();
 
-    if (res.ok) {
-      toast.success("Message sent successfully! I'll get back to you soon.");
-      reset();
-    } else {
-      toast.error("Failed to send message");
+      console.log(result);
+
+      if (res.ok) {
+        toast.success("Message sent successfully!");
+        reset();
+      } else {
+        toast.error(result.message || "Failed to send message");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    toast.error("Something went wrong");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
   return (
     <div
       id="contact"
