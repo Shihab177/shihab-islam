@@ -98,7 +98,7 @@ const Hero = () => {
             </svg>
             <div className="text-left">
               <div className="text-white text-sm font-semibold">Backend</div>
-              <div className="text-white/40 text-xs"> Express MongoDB</div>
+              <div className="text-white/40 text-xs"> Express , MongoDB</div>
             </div>
           </div>
         </div>

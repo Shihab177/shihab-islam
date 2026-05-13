@@ -66,19 +66,30 @@ const Contact = () => {
       color: "hover:text-red-500",
     },
   ];
-  const onSubmit = async (data) => {
-    console.log("Form data:", data);
-    setIsSubmitting(true);
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+ const onSubmit = async (data) => {
+  setIsSubmitting(true);
+
+  try {
+    const res = await fetch("https://your-server-url/send-message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
       toast.success("Message sent successfully! I'll get back to you soon.");
       reset();
-    } catch (error) {
-      toast.error("Failed to send message. Please try again.");
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      toast.error("Failed to send message");
     }
-  };
+  } catch (error) {
+    toast.error("Something went wrong");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <div
       id="contact"
