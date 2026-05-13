@@ -10,7 +10,6 @@ const Home = () => {
      
   return (
     <div>
-      
       <Hero></Hero>
       <About></About>
       <Skills></Skills>
