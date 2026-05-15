@@ -198,37 +198,37 @@ const ProjectDetails = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:mt-15 mt-5 md:mt-0 lg:flex gap-15 ">
         <div className="lg:w-[70%] ">
-          <h2 className="text-[24px] font-semibold text-white flex items-center gap-4">
+          <h2 className="text-[24px] font-semibold text-gray-100 flex items-center gap-4">
             <FaFileAlt className="text-[#00d4b4]" />
             Project Overview
           </h2>
 
-          <p className="text-gray-200 text-[15px] md:text-[16px] mt-5">
+          <p className="text-white/55 text-[15px] md:text-[16px] mt-5 px-3">
             {detailsData.overview}
           </p>
           <div className="lg:mt-15 mt-5 md:mt-8">
-            <h2 className="text-[24px] font-semibold text-white flex items-center gap-4">
+            <h2 className="text-[24px] font-semibold text-gray-100 flex items-center gap-4">
               <FaExclamationTriangle className="text-[#00d4b4]" />
               Challenges Faced
             </h2>
             {detailsData.Challenges.map((cha, index) => (
               <div
-                className="flex items-center text-gray-200 text-[15px] md:text-[16px] gap-x-5 mt-5"
+                className="flex items-center text-white/55 text-[15px] md:text-[16px] md:gap-x-5 gap-2 mt-5 px-2"
                 key={index}
               >
-                <div className="h-[12px] w-[12px] rounded-full bg-red-500 flex-shrink-0"></div>
+                <div className="md:h-[12px] md:w-[12px] h-[8px] w-[8px] rounded-full bg-red-500 flex-shrink-0"></div>
                 {cha}
               </div>
             ))}
           </div>
           <div className="lg:mt-15 mt-5 md:mt-8">
-            <h2 className="text-[24px] font-semibold text-white flex items-center gap-4">
+            <h2 className="text-[24px] font-semibold text-gray-100 flex items-center gap-4">
               <TrendingUp className="text-[#00d4b4]" />
               Future Improvements
             </h2>
             {detailsData.Challenges.map((cha, index) => (
               <div
-                className="flex items-center text-gray-200 text-[15px] md:text-[16px] gap-x-5 mt-5"
+                className="flex items-center text-white/55 text-[15px] md:text-[16px]  mt-5"
                 key={index}
               >
                 <div className="h-[12px] w-[12px] rounded-full text-[#00d4b4] flex-shrink-0"></div>
@@ -243,7 +243,7 @@ const ProjectDetails = () => {
             <FaTools className="text-[#00d4b4]" />
             Technology Stack
           </h2>
-          <div className="mt-5 flex flex-col gap-y-3">
+          <div className="mt-5 flex flex-col gap-y-3 px-2 md:px-0">
             {detailsData.technology.map((tec, index) => (
               <div
                 className="w-full px-3 py-2 text-[16px] bg-[#181D39] border-blue-300 rounded-md border text-blue-200"
@@ -258,7 +258,7 @@ const ProjectDetails = () => {
               <FiGlobe className="text-[#00d4b4]" />
               Project Links
             </h2>
-            <div className="flex flex-col gap-y-3">
+            <div className="flex flex-col gap-y-3 px-2 md:px-0">
               <a href={detailsData.liveLink} target="_blank">
                 <button className="py-[8px] opacity-90 mt-6 w-full bg-[var(--primary-color)] rounded-md border-2 border-[var(--primary-color)] shadow-[0_0_10px_#7cf03d] text-[16px] font-semibold hover:bg-transparent hover:shadow-none text-black hover:text-[var(--primary-color)]  transition-all duration-500 ease-in-out">
                   Live Demo
