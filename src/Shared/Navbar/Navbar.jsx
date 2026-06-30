@@ -10,6 +10,7 @@ import {
 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { Link, animateScroll as scroll } from "react-scroll";
+import logo from "../../assets/images/bird.png";
 import scrollSpy from "react-scroll/modules/mixins/scroll-spy";
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
@@ -61,9 +62,11 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 h-full flex justify-between items-center text-white">
           <div className="">
-            <h1 className="text-[30px]  font-semibold text-[#28B79C] ">
-              Shihab.
-            </h1>
+            <img
+              src={logo}
+              alt="Logo"
+              className="w-10 h-10 md:w-12 md:h-12 lg:w-[60px] lg:h-[60px]"
+            />
           </div>
 
           {/* Desktop Links */}
