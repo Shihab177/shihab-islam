@@ -57,7 +57,7 @@ const Hero = () => {
             Hire Me
           </button>
 
-          <a href="/Resume (9).pdf" target="_blank" rel="noopener noreferrer">
+          <a href="/Shihab_Islam_Resume (3).pdf" target="_blank" rel="noopener noreferrer">
             <button className="bg-white/5 backdrop-blur-md text-white font-medium text-sm px-7 py-3 rounded-lg border border-white/10 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
               Download CV
             </button>
