@@ -93,10 +93,10 @@ const Navbar = () => {
           {/* Desktop Download CV Button */}
           <div className="hidden lg:block">
             <a
-              href="/Shihab_Islam_Resume (3).pdf"
+              href="/Shihab_Islam_Resume (4).pdf"
               target="_blank"
               rel="noopener noreferrer"
-              download="Shihab_Islam_Resume (3).pdf"
+              download="Shihab_Islam_Resume (4).pdf"
             >
               <button className="flex items-center gap-2 bg-[#00d4b4] text-black font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-[#00b398] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer shadow-md shadow-[#00d4b4]/10">
                 <HiDownload size={18} />
@@ -166,10 +166,10 @@ const Navbar = () => {
         {/* Mobile Download CV Button */}
         <div className="p-5 border-t border-white/10">
           <a
-            href="/Shihab_Islam_Resume (3).pdf"
+            href="/Shihab_Islam_Resume (4).pdf"
             target="_blank"
             rel="noopener noreferrer"
-            download="Shihab_Islam_Resume (3).pdf"
+            download="Shihab_Islam_Resume (4).pdf"
             onClick={() => setMenuOpen(false)}
             className="w-full block"
           >
