@@ -29,6 +29,10 @@ const Skills = () => {
           image: javascriptImage,
         },
         {
+          name: "TypeScript",
+          image: typescriptImage,
+        },
+        {
           name: "React",
           image: reactImage,
         },
@@ -36,10 +40,7 @@ const Skills = () => {
           name: "Next.js",
           image: nextjsImage,
         },
-        {
-          name: "TypeScript",
-          image: typescriptImage,
-        },
+        
         {
           name: "Zustand",
           image: zustandImage,
